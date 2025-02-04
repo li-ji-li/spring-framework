@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.abc'
+version = '7.0.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    //引入spring核心容器
+    optional(project(":spring-context"))
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+}
+
+test {
+    useJUnitPlatform()
+}
