@@ -216,6 +216,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	private @Nullable Thread shutdownHook;
 
 	/** ResourcePatternResolver used by this context. */
+	//策略模式的环境类
 	private final ResourcePatternResolver resourcePatternResolver;
 
 	/** LifecycleProcessor for managing the lifecycle of beans within this context. */
@@ -585,6 +586,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 			prepareRefresh();
 
 			// Tell the subclass to refresh the internal bean factory.
+			//  beanFactory第一次创建的时候
 			ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
 
 			// Prepare the bean factory for use in this context.
@@ -703,6 +705,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	 * @see #getBeanFactory()
 	 */
 	protected ConfigurableListableBeanFactory obtainFreshBeanFactory() {
+		//刷新整个Bean工厂
 		refreshBeanFactory();
 		return getBeanFactory();
 	}

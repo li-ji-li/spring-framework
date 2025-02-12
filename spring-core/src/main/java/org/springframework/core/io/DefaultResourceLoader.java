@@ -47,7 +47,7 @@ import org.springframework.util.StringUtils;
  * @see FileSystemResourceLoader
  * @see org.springframework.context.support.ClassPathXmlApplicationContext
  */
-public class DefaultResourceLoader implements ResourceLoader {
+public class  DefaultResourceLoader implements ResourceLoader {
 
 	private @Nullable ClassLoader classLoader;
 

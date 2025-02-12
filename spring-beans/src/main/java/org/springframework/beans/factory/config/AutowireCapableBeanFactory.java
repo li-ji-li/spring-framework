@@ -134,6 +134,7 @@ public interface AutowireCapableBeanFactory extends BeanFactory {
 	 * @return the new bean instance
 	 * @throws BeansException if instantiation or wiring failed
 	 */
+	//创建bean
 	<T> T createBean(Class<T> beanClass) throws BeansException;
 
 	/**
@@ -141,11 +142,12 @@ public interface AutowireCapableBeanFactory extends BeanFactory {
 	 * and bean property post-processing (for example, for annotation-driven injection).
 	 * <p>Note: This is essentially intended for (re-)populating annotated fields and
 	 * methods, either for new instances or for deserialized instances. It does
-	 * <i>not</i> imply traditional by-name or by-type autowiring of properties;
+	 * <i>not</i> imply traditiona l by-name or by-type autowiring of properties;
 	 * use {@link #autowireBeanProperties} for those purposes.
 	 * @param existingBean the existing bean instance
 	 * @throws BeansException if wiring failed
 	 */
+	//自动装配
 	void autowireBean(Object existingBean) throws BeansException;
 
 	/**

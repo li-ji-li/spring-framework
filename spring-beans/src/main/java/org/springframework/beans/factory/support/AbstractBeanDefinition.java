@@ -228,7 +228,7 @@ public abstract class AbstractBeanDefinition extends BeanMetadataAttributeAccess
 	/**
 	 * Create a new AbstractBeanDefinition with default settings.
 	 */
-	protected AbstractBeanDefinition() {
+	protected AbstractBeanDefinition()    {
 		this(null, null);
 	}
 

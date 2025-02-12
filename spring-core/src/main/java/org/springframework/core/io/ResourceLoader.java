@@ -21,13 +21,13 @@ import org.jspecify.annotations.Nullable;
 import org.springframework.util.ResourceUtils;
 
 /**
- * Strategy interface for loading resources (for example, class path or file system
+ * Strategy interface(策略接口) for loading resources (for example, class path or file system
  * resources). An {@link org.springframework.context.ApplicationContext}
  * is required to provide this functionality plus extended
  * {@link org.springframework.core.io.support.ResourcePatternResolver} support.
  *
  * <p>{@link DefaultResourceLoader} is a standalone implementation that is
- * usable outside an ApplicationContext and is also used by {@link ResourceEditor}.
+ * usable outside an ApplicationContext and is al so used by {@link ResourceEditor}.
  *
  * <p>Bean properties of type {@code Resource} and {@code Resource[]} can be populated
  * from Strings when running in an ApplicationContext, using the particular

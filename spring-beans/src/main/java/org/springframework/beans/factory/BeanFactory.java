@@ -23,21 +23,22 @@ import org.springframework.core.ResolvableType;
 
 /**
  * The root interface for accessing a Spring bean container.
- *
+ *根接口 ：程序的入口
  * <p>This is the basic client view of a bean container;
  * further interfaces such as {@link ListableBeanFactory} and
  * {@link org.springframework.beans.factory.config.ConfigurableBeanFactory}
  * are available for specific purposes.
  *
  * <p>This interface is implemented by objects that hold a number of bean definitions,
+ * 保存很多的bean定义信息 ，都有一个唯一的名字
  * each uniquely identified by a String name. Depending on the bean definition,
  * the factory will return either an independent instance of a contained object
- * (the Prototype design pattern), or a single shared instance (a superior
+ * (the Prototype design pattern)【原型模式】, or a single shared instance 【单例模式  】(a superior
  * alternative to the Singleton design pattern, in which the instance is a
  * singleton in the scope of the factory). Which type of instance will be returned
  * depends on the bean factory configuration: the API is the same. Since Spring
  * 2.0, further scopes are available depending on the concrete application
- * context (for example, "request" and "session" scopes in a web environment).
+ * context (for example, "request" and "sessi  on" scopes in a web environment).
  *
  * <p>The point of this approach is that the BeanFactory is a central registry
  * of application components, and centralizes configuration of application
@@ -164,6 +165,7 @@ public interface BeanFactory {
 	 * @throws NoSuchBeanDefinitionException if there is no such bean definition
 	 * @throws BeanNotOfRequiredTypeException if the bean is not of the required type
 	 * @throws BeansException if the bean could not be created
+	 * 工厂方法模式：  构建组件
 	 */
 	<T> T getBean(String name, Class<T> requiredType) throws BeansException;
 

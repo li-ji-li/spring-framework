@@ -58,7 +58,7 @@ public class EncodedResource implements InputStreamSource {
 	 * not specifying an explicit encoding or {@code Charset}.
 	 * @param resource the {@code Resource} to hold (never {@code null})
 	 */
-	public EncodedResource(Resource resource) {
+	public   EncodedResource(Resource resource) {
 		this(resource, null, null);
 	}
 
@@ -135,6 +135,7 @@ public class EncodedResource implements InputStreamSource {
 	 */
 	public Reader getReader() throws IOException {
 		if (this.charset != null) {
+			//包装模式
 			return new InputStreamReader(this.resource.getInputStream(), this.charset);
 		}
 		else if (this.encoding != null) {

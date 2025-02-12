@@ -3,14 +3,14 @@
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--	<bean class="com.abc.spring.bean.Person" id="person">-->
-<!--		<property name="name" value="张三"/>-->
-<!--	</bean>-->
+	<bean class="com.abc.spring.bean.Person" id="person">
+		<property name="name" value="li"/>
+	</bean>
 
 
 	<bean class="com.abc.spring.bean.Cat" id="cat" >
 		<!--		<constructor-arg-->
-		<property name="name" value="张三的猫"/>
+		<property name="name" value="li的猫：timi"/>
 	</bean>
 	<!--	xml  转为 BeanDefinition 这个java对象-->
 

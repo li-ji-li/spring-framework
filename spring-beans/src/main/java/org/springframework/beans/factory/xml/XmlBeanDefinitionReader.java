@@ -314,6 +314,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 	 */
 	@Override
 	public int loadBeanDefinitions(Resource resource) throws BeanDefinitionStoreException {
+		//装饰模式/适配器：new EncodedResource(resource)
 		return loadBeanDefinitions(new EncodedResource(resource));
 	}
 
@@ -394,7 +395,9 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 			throws BeanDefinitionStoreException {
 
 		try {
+			// 利用dom解析工具把xml变成document
 			Document doc = doLoadDocument(inputSource, resource);
+
 			int count = registerBeanDefinitions(doc, resource);
 			if (logger.isDebugEnabled()) {
 				logger.debug("Loaded " + count + " bean definitions from " + resource);
