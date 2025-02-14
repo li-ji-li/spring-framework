@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,6 +17,9 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 public class Person {
+
+	@Autowired
+	ApplicationContext applicationContext;
 
 	private String name;
 	//@Autowired
