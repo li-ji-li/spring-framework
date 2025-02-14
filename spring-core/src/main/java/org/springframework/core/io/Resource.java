@@ -62,6 +62,7 @@ public interface Resource extends InputStreamSource {
 	 * existence of a {@code Resource} handle only guarantees a valid
 	 * descriptor handle.
 	 */
+	//资源是否存在
 	boolean exists();
 
 	/**
@@ -75,6 +76,7 @@ public interface Resource extends InputStreamSource {
 	 * @see #getInputStream()
 	 * @see #exists()
 	 */
+	//是否可读
 	default boolean isReadable() {
 		return exists();
 	}
@@ -85,6 +87,7 @@ public interface Resource extends InputStreamSource {
 	 * and must be read and closed to avoid resource leaks.
 	 * <p>Will be {@code false} for typical resource descriptors.
 	 */
+	//是否可以打开
 	default boolean isOpen() {
 		return false;
 	}
@@ -97,6 +100,7 @@ public interface Resource extends InputStreamSource {
 	 * @since 5.0
 	 * @see #getFile()
 	 */
+	//是不是文件
 	default boolean isFile() {
 		return false;
 	}
@@ -106,6 +110,7 @@ public interface Resource extends InputStreamSource {
 	 * @throws IOException if the resource cannot be resolved as URL,
 	 * i.e. if the resource is not available as a descriptor
 	 */
+	//获取url
 	URL getURL() throws IOException;
 
 	/**
@@ -114,6 +119,7 @@ public interface Resource extends InputStreamSource {
 	 * i.e. if the resource is not available as a descriptor
 	 * @since 2.5
 	 */
+	//获取url
 	URI getURI() throws IOException;
 
 	/**
@@ -123,6 +129,7 @@ public interface Resource extends InputStreamSource {
 	 * @throws IOException in case of general resolution/reading failures
 	 * @see #getInputStream()
 	 */
+	//获取文件
 	File getFile() throws IOException;
 
 	/**
@@ -136,6 +143,7 @@ public interface Resource extends InputStreamSource {
 	 * @since 5.0
 	 * @see #getInputStream()
 	 */
+	//准备一个可读取 通道
 	default ReadableByteChannel readableChannel() throws IOException {
 		return Channels.newChannel(getInputStream());
 	}
