@@ -31,12 +31,14 @@ public class AnnotationMainTest {
 //		Cat bean2 = context.getBean(Cat.class);
 //
 //		System.out.println(bean1 == bean2);  //false
-		Person bean1 = context.getBean(Person.class);
-		Cat cat = bean1.getCat();
-		Person bean2 = context.getBean(Person.class);
-		Cat cat1 = bean2.getCat();
-		System.out.println(cat1 == cat);  //true
-//		System.out.println(cat1);
+//		Person bean1 = context.getBean(Person.class);
+//		Cat cat = bean1.getCat();
+//		Person bean2 = context.getBean(Person.class);
+//		Cat cat1 = bean2.getCat();
+//		System.out.println(cat1 == cat);  //true
+////		System.out.println(cat1);
+		Person bean = context.getBean(Person.class);
+
 	}
 
 }
