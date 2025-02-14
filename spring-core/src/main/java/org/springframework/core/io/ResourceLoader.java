@@ -61,10 +61,11 @@ public interface ResourceLoader {
 	 * you need to invoke {@link Resource#exists} to check for existence.
 	 * @param location the resource location
 	 * @return a corresponding {@code Resource} handle (never {@code null})
-	 * @see #CLASSPATH_URL_PREFIX
+	 * @see #CLASSPATH_URL_P REFIX
 	 * @see Resource#exists()
 	 * @see Resource#getInputStream()
 	 */
+	//根据路径得到一个资源
 	Resource getResource(String location);
 
 	/**
